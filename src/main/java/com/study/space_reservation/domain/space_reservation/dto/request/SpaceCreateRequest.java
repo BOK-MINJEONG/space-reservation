@@ -1,4 +1,4 @@
-package com.study.space_reservation.domain.space_reservation.dto;
+package com.study.space_reservation.domain.space_reservation.dto.request;
 
 import com.study.space_reservation.domain.space_reservation.Space;
 import lombok.Getter;

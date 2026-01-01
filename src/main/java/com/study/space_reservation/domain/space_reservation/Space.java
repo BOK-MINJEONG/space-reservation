@@ -17,11 +17,9 @@ public class Space {
 
     private String name;
 
-    private int capacity;
+    private Integer capacity;
 
     private String imageUrl;
-
-    private String description;
 
     private String spaceNumber;
 

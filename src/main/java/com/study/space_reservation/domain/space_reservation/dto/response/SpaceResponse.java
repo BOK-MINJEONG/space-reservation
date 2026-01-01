@@ -1,4 +1,4 @@
-package com.study.space_reservation.domain.space_reservation.dto;
+package com.study.space_reservation.domain.space_reservation.dto.response;
 
 import com.study.space_reservation.domain.space_reservation.Space;
 import lombok.Builder;
@@ -9,7 +9,7 @@ import lombok.Getter;
 public class SpaceResponse {
     private Long id;
     private String name;
-    private int capacity;
+    private Integer capacity;
     private String label; // Enum의 "회의실" 같은 한글명
     private String spaceNumber;
     private String mapName; // Map 엔티티에서 이름을 가져옴
