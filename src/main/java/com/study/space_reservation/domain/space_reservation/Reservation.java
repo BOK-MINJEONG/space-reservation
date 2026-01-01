@@ -3,7 +3,9 @@ package com.study.space_reservation.domain.space_reservation;
 import lombok.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
 @Getter
@@ -16,10 +18,13 @@ public class Reservation {
     private Long id;
 
     @Column(nullable = false)
-    private LocalDateTime startAt;
+    private LocalDate reservationDate;
 
     @Column(nullable = false)
-    private LocalDateTime endAt;
+    private LocalTime startAt;
+
+    @Column(nullable = false)
+    private LocalTime endAt;
 
     @Column(nullable = false)
     private String purpose;

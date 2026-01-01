@@ -4,9 +4,12 @@ import lombok.Getter;
 
 @Getter
 public enum ReservationStatus {
+    PENDING("승인대기"),
     APPROVED("승인완료"),
     REJECTED("예약반려"),
-    COMPLETED("지난예약"); // 이용 시간이 지난 경우 혹은 이용 완료
+    CANCELLED("취소");
+
+    // 지난예약은 endAt < now로 대시보드 조회 시 계산
 
     private final String label;
 

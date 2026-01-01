@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/reservation")
+@RequestMapping("/space")
 @RequiredArgsConstructor
 public class SpaceController {
     private final SpaceService spaceService;
