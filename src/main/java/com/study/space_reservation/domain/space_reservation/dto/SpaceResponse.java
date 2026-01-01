@@ -13,6 +13,7 @@ public class SpaceResponse {
     private String label; // Enum의 "회의실" 같은 한글명
     private String spaceNumber;
     private String mapName; // Map 엔티티에서 이름을 가져옴
+    // todo: mapLocation 추가 (ex. 건국대학교 중장비실험동)
 
     public static SpaceResponse from(Space space) {
         return SpaceResponse.builder()
@@ -22,6 +23,7 @@ public class SpaceResponse {
                 .label(space.getSpaceType().getLabel())
                 .spaceNumber(space.getSpaceNumber())
                 .mapName(space.getMap().getName())
+                // .mapLocation(space.getMap().get??())
                 .build();
     }
 }
