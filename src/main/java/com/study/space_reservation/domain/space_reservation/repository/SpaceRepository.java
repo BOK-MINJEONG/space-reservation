@@ -3,9 +3,11 @@ package com.study.space_reservation.domain.space_reservation.repository;
 import com.study.space_reservation.domain.map.Map;
 import com.study.space_reservation.domain.space_reservation.Space;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Lock;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
+import javax.persistence.LockModeType;
 import java.util.List;
 
 public interface SpaceRepository extends JpaRepository<Space, Long> {
@@ -21,4 +23,8 @@ public interface SpaceRepository extends JpaRepository<Space, Long> {
             "JOIN FETCH s.map " +
             "WHERE s.map.id = :mapId AND s.spaceType = :spaceType")
     List<Space> findByMapIdAndSpaceTypeWithMap(@Param("mapId") Long mapId, @Param("spaceType") Space.SpaceType spaceType);
+
+    @Lock(LockModeType.PESSIMISTIC_WRITE)
+    @Query("select s from Space s where s.id = :id")
+    Space findForUpdate(@Param("id") Long id);
 }
