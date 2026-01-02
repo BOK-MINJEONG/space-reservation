@@ -23,19 +23,6 @@ public class SpaceController {
     private final SpaceService spaceService;
     private final ReservationService reservationService;
 
-    /** 공간 생성 (프론트의 엔드포인트 X) */
-    @PostMapping("/admin/spaces")
-    public ResponseEntity<String> create(@RequestBody SpaceCreateRequest request) {
-        String result = spaceService.createSpace(request);
-        return ResponseEntity.ok(result);
-    }
-
-    /** 모든 공간 조회 (프론트의 엔드포인트 X) */
-    @GetMapping("/admin/spaces")
-    public ResponseEntity<List<SpaceResponse>> getAllSpaces() {
-        return ResponseEntity.ok(spaceService.findAllSpaces());
-    }
-
     /** 공간 유형에 따른 가능한 위치 목록 조회 */
     @GetMapping("/maps")
     public ResponseEntity<List<MapResponse>> getAllMaps(@RequestParam Space.SpaceType spaceType,

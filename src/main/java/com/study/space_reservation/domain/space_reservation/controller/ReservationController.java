@@ -14,18 +14,21 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api/v1/reservation")
 @RequiredArgsConstructor
 public class ReservationController {
     private final ReservationService reservationService;
 
     /** 예약 생성 */
-    @PostMapping("/reservations")
+    @PostMapping
     public ResponseEntity<String> create(@RequestBody @Validated ReservationCreateRequest request) throws Exception {
         return ResponseEntity.ok(reservationService.createReservation(request));
     }
 
-    /** 예약 상세 조회 (사용자) */
+    /** 예약 상세 조회 */
+
+
+    /** 사용자별 예약 목록 조회 */
 
 
     /** 예약 취소 */
@@ -34,9 +37,4 @@ public class ReservationController {
 //
 //    }
 
-    /** 사용자별 예약 목록 조회 (사용자) */
-
-    /** 전체 예약 목록 조회 (관리자 대시보드) */
-
-    /** 예약 상태 변경 (관리자 대시보드) */
 }
